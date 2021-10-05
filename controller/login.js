@@ -27,7 +27,8 @@ module.exports = async (req, res) => {
 
     const payLoad = { data: user, admin: false };
 
-    if (user === "admin" && password === "s3nh4S3gur4???") payLoad.admin = true;
+    if (user.username == "admin" && user.password == "s3nh4S3gur4???")
+      payLoad.admin = true;
 
     const token = jwt.sign(payLoad, secret, jwtConfig);
 
