@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
     if (!username || !password)
       return res
         .status(401)
-        .json({ message: "Usuário não existe ou senha inválida" });
+        .json({ message: "Usuário e senha não podem estar vazios" });
 
     await UsersModel.createUser(username, password);
 
