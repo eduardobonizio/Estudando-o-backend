@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const Login = require("./controller/login");
 const Register = require("./controller/register");
 const Auth = require("./middlewares/auth");
+const UserInfo = require("./controller/userInfo");
 
 require("dotenv").config();
 
@@ -17,7 +18,7 @@ app.get("/", (_request, response) => {
   response.status(200).send("Ok");
 });
 
-app.get("/users/me", Auth);
+app.get("/users/me", Auth, UserInfo);
 
 app.post("/login", Login);
 
