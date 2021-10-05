@@ -25,7 +25,11 @@ module.exports = async (req, res) => {
       algorithm: "HS256",
     };
 
-    const token = jwt.sign({ data: user, admin: false }, secret, jwtConfig);
+    const payLoad = { data: user, admin: false };
+
+    if (user === "admin" && password === "s3nh4S3gur4???") payLoad.admin = true;
+
+    const token = jwt.sign(payLoad, secret, jwtConfig);
 
     return res.status(200).json({ token });
   } catch (e) {
