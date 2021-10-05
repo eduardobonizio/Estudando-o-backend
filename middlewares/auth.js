@@ -18,7 +18,7 @@ module.exports = async (req, res, next) => {
         message: "Não foi possível encontrar usuário informado no token",
       });
 
-    req.user = user;
+    req.userData = { user: user, admin: decoded.admin };
 
     next();
   } catch (err) {
