@@ -4,8 +4,8 @@ require('dotenv').config();
 
 // eslint-disable-next-line no-undef
 const MONGO_DB_URL = process.env.DB_URL;
-
-const DB_NAME = 'StoreManager';
+// eslint-disable-next-line no-undef
+const DB_NAME = process.env.DB_NAME;
 
 const connection = (URL = MONGO_DB_URL) => MongoClient
     .connect(URL, {
