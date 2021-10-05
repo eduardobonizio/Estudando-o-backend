@@ -2,6 +2,7 @@ Esse repositório é para treinamento de utilização do servidor express com jw
 
 Módulos utilizados:
 express
+cors
 nodemon
 jsonwebtoken
 dotenv
