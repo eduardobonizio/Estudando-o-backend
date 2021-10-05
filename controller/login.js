@@ -4,7 +4,7 @@ const UserModel = require("../models/usersModel");
 // eslint-disable-next-line no-undef
 const secret = process.env.SECRET;
 
-const login = async (req, res) => {
+module.exports = async (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -31,8 +31,4 @@ const login = async (req, res) => {
   } catch (e) {
     return res.status(500).json({ message: "Erro interno", error: e });
   }
-};
-
-module.exports = {
-  login,
 };
