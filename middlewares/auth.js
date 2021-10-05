@@ -11,7 +11,7 @@ module.exports = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.SECRET);
 
-    const user = UsersModel.findUser(decoded.data.username);
+    const user = await UsersModel.findUser(decoded.data.username);
 
     if (!user)
       return res.status(401).json({
