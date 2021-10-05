@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const Login = require("./controller/login");
+const { Login } = require("./controller/login");
+const { Register } = require("./controller/register");
 
 require("dotenv").config();
 
@@ -15,7 +16,9 @@ app.get("/", (_request, response) => {
   response.status(200).send("Ok");
 });
 
-app.post("/login", Login.login);
+app.post("/login", Login);
+
+app.post("/register", Register);
 
 app.listen(PORT, () => {
   console.log("Online");
