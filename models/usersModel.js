@@ -8,7 +8,7 @@ const findUser = async (username) => {
     .then((db) => db.collection("users"));
 
   const user = await usersCollection.findOne({ username: username });
-  return { user };
+  return user;
 };
 
 const createUser = async (username, password) => {
