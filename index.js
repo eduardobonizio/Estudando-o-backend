@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const Login = require("./controller/login");
 const Register = require("./controller/register");
+const Auth = require("./auth/validateJwt");
 
 require("dotenv").config();
 
@@ -15,6 +16,8 @@ app.use(bodyParser.json());
 app.get("/", (_request, response) => {
   response.status(200).send("Ok");
 });
+
+app.get("/users/me", Auth);
 
 app.post("/login", Login);
 
