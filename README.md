@@ -8,3 +8,6 @@ jsonwebtoken
 dotenv
 body-parser
 eslint
+prettier
+eslint-config-prettier
+eslint-plugin-prettier
