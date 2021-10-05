@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const { response } = require('express');
 
 require('dotenv').config();
 
@@ -11,7 +12,11 @@ const app = express();
 app.use(bodyParser.json())
 
 app.get('/', (_request, response) => {
-  response.send();
+  response.status(200).send('Ok');
+});
+
+app.post('/login', () => {
+  response.status(200).send('Ok')
 });
 
 app.listen(PORT, () => {
