@@ -7,6 +7,7 @@ dotenv -- Para variáveis de ambiente
 jsonwebtoken -- Tokens para validação de usuários
 multer -- Tratamento de arquivos
 cors -- Permite que a api seja consumida
+axios -- Para consumir a API
 eslint
 prettier
 eslint-config-prettier
