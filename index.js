@@ -10,6 +10,21 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+/*Configura a forma de armazenamento do multer
+sem tratativa de erro, parametro "null" da callback
+essa const deve se chamar storage para ser utilizada
+na const upload*/
+const storage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, "uploads/");
+  },
+  filename: (req, file, callback) => {
+    callback(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage });
+
 app.use(
   cors({
     origin: `http://localhost:${PORT}`,
@@ -22,17 +37,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* Define a pasta pública */
-/* __dirname + '/uploads' é o caminho da pasta que será exposta publicamente */
-/* Isso quer dizer que, sempre que receber uma request, o express vai primeiro
-verificar se o caminho da request é o nome de um arquivo que existe em `uploads`.
-Se for, o express envia o conteúdo desse arquivo e encerra a response. */
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.get("/", (_request, response) => {
   response.status(200).send("Ok");
 });
-
-const upload = multer({ dest: "uploads" });
 
 app.get("/users/me", Auth, UserInfo);
 
