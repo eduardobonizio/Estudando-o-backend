@@ -4,9 +4,6 @@ const Register = require("./controller/register");
 const Auth = require("./middlewares/auth");
 const UserInfo = require("./controller/userInfo");
 
-require("dotenv").config();
-
-// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 3000;
 
 const app = express();
