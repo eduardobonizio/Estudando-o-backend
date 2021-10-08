@@ -2,10 +2,11 @@ Esse repositório é para treinamento de utilização do servidor express com jw
 
 Módulos utilizados:
 express
-cors
 nodemon
-jsonwebtoken
-dotenv
+dotenv -- Para variáveis de ambiente
+jsonwebtoken -- Tokens para validação de usuários
+multer -- Tratamento de arquivos
+cors -- Falta aplicar
 body-parser
 eslint
 prettier
