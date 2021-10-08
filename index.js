@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const Login = require("./controller/login");
 const Register = require("./controller/register");
 const Auth = require("./middlewares/auth");
