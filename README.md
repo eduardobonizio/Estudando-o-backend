@@ -7,7 +7,6 @@ dotenv -- Para variáveis de ambiente
 jsonwebtoken -- Tokens para validação de usuários
 multer -- Tratamento de arquivos
 cors -- Falta aplicar
-body-parser
 eslint
 prettier
 eslint-config-prettier
