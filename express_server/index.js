@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.get("/", (_request, response) => {
-  response.status(200).send("Ok");
+  response.status(200).send({ message: "Ok" });
 });
 
 app.get("/users/me", Auth, UserInfo);
