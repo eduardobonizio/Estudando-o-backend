@@ -1,0 +1,3 @@
+apps:
+  - name: edubonizio-backend-test
+    script: ./express_server/index.js
