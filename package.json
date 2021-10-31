@@ -21,7 +21,7 @@
     "prettier": "^2.4.1"
   },
   "scripts": {
-    "start": "node express_server/index.js",
+    "start": "pm2-runtime start ecosystem.config.yml",
     "dev": "nodemon express_server/index.js",
     "dev:consume": "node ./consume_api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
