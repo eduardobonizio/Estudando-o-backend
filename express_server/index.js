@@ -22,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* Define a pasta pública */
+/* app.use(express.static('public')); */
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.get("/", (_request, response) => {
